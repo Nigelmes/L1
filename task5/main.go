@@ -33,6 +33,7 @@ func sender(ctx context.Context, channel chan<- string, languages []string, wg *
 }
 
 func main() {
+	rand.Seed(time.Now().UnixNano())
 	wg := new(sync.WaitGroup) // waitgroup для ожидания горутин
 	wg.Add(2)
 	languages := []string{"Golang", "Java", "C++", "Python", "Ruby", "C", "Kotlin"}
