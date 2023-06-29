@@ -33,4 +33,5 @@ func main() {
 	fmt.Println(MiniCalc(num1, num2, "-"))
 	fmt.Println(MiniCalc(num1, num2, "*"))
 	fmt.Println(MiniCalc(num1, num2, "/"))
+
 }
