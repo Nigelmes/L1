@@ -16,7 +16,7 @@ import (
 )
 
 func createHugeString(lenght int) string {
-	var str strings.Builder
+	var str strings.Builder // является структурой в языке программирования Go, предназначенной для эффективной конкатенации и создания строк
 	for i := 0; i < lenght; i++ {
 		str.WriteString("Ф")
 	}
