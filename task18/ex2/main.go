@@ -14,13 +14,13 @@ type Counter struct { //  структура с полем total которое 
 
 func (c *Counter) increment() {
 	c.mx.Lock()         // лочим на запись мьютексом, только одна горутина может писать и читать
-	defer c.mx.Unlock() //
+	defer c.mx.Unlock() // при выходе из метода срабатывает отложенный вызов разблокировки с помощью defer
 	c.total++           // инкреминтируемся
 }
 
 func (c *Counter) value() int64 {
 	c.mx.RLock()         // лочим на чтение, в этом случае все горутины могут читать
-	defer c.mx.RUnlock() //
+	defer c.mx.RUnlock() // при выходе из метода срабатывает отложенный вызов разблокировки с помощью defer
 	return c.total       // возвращаем значение
 }
 
